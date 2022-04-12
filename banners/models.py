@@ -6,5 +6,5 @@ class SavedImage(models.Model):
 
 
 class Banner(models.Model):
-    description = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
     images = models.ManyToManyField(SavedImage)

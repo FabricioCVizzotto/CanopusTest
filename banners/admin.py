@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import SavedImage, Banner
+
+admin.site.register(SavedImage)
+admin.site.register(Banner)

@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'banners/style.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script>
+  new Vue({
+    el: "#app_basic",
+    data: {
+      message: '',
+      timestamp: ``,
+    },
+  })
+</script>
+{% if latest_banner_list %}
+    <ul>
+    {% for banner in latest_banner_list %}
+    <li><a href="{% url 'banners:detail' banner.id %}">{{ banner.title }}</a></li>
+	<ul>
+	  {% for photo in banner.images.all %}
+	    <li>
+		 <img src ="{{ photo.image.url }}"/>
+	    </li>
+	  {% endfor %}
+	</ul>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No banners are available.</p>
+{% endif %}
