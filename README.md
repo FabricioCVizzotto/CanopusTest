@@ -23,8 +23,6 @@ acessível pela URL localhost:8000/admin/
 Lá é possível realizar todas as operações de CRUD em imagens e carrosseis(que traduzi para o inglês como banners).
 
 Para o front-end HTML, CSS e JS, que são tecnologias padrão, 
-mas a framework escolhida foi o tailwind, 
-que é uma framework apenas de CSS utilizada para auxiliar na responsividade das páginas.
-Como requisitado a funcionalidade do carrossel foi implementada inteiramente por CSS e JS.
+Como requisitado a funcionalidade do carrossel foi implementada inteiramente por CSS.
 Considerei utilizar a Vue.js framework para adicionar mais reatividade no front-end,
 mas como não agregaria na proposta principal do projeto optei por não usá-la.
