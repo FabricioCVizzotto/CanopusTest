@@ -2,19 +2,25 @@
 <link rel="stylesheet" type="text/css" href="{% static 'banners/style.css' %}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-
 {% if latest_banner_list %}
     <ul>
     {% for banner in latest_banner_list %}
     <li><a href="{% url 'banners:detail' banner.id %}">{{ banner.title }}</a></li>
-	<ul>
+	<section class="banner">		
+    	<ul class="slides">
 	  {% for photo in banner.images.all %}
-	    <li>
-		 <img src ="{{ photo.image.url }}"/>
+	  <li class="slide-item slide-{{photo.id}}" id="slide-{{photo.id}}">
+		 <a class="photo-description"> {{ photo.description }}</a>
+		 <img class="photo" src ="{{ photo.image.url }}"/>
 	    </li>
 	  {% endfor %}
 	</ul>
+	<div class="banner__nav">
+	{% for photo in banner.images.all %}
+	  <a class="slider-nav" href="#slide-{{photo.id}}">{{photo.id}}</a>
+	{% endfor %}
+	</div>
+	</section>
     {% endfor %}
     </ul>
 {% else %}
