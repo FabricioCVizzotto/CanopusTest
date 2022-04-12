@@ -10,16 +10,23 @@ tomei a liberdade de usar estas funcionalidades preset da ferramenta.
 Portanto para que o sistema funcione é necessário que o host dele tenha instalado o python 3.10 instalado, e o django 4 (latest)
 e utilizando o pip se instale os outros requisitos de back-end descritos no documento requirements.txt
 usando o comando na pasta raiz do projeto:
+
 python -m pip install -r requirements.txt
+
 e em seguida o comando na pasta raiz do projeto:
+
 python manage.py runserver
-que disponibilizará o projeto no endereço localhost:8000 pelo browser da máquina host.
+
+que disponibilizará o projeto no endereço localhost:8000/banners pelo browser da máquina host.
 
 O banco de dados está anexo ao próprio projeto do git, bem como as imagens que usei de exemplo, para facilitar os testes.
 O usuário padrão ficou estabelecido como sem necessidade de login.
 O usuário administrador registrado em banco de dados é o de usuário admin, senha 123 estas configurações de segurança são
 fracas mas como é um projeto apenas demonstrativo tomei a liberdade de utilizá-las.
-acessível pela URL localhost:8000/admin/
+acessível pela URL 
+
+localhost:8000/admin/
+
 Lá é possível realizar todas as operações de CRUD em imagens e carrosseis(que traduzi para o inglês como banners).
 
 Para o front-end HTML, CSS e JS, que são tecnologias padrão, 
